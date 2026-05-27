@@ -1,0 +1,31 @@
+:root{
+    --logo-orange: #FCC590;
+    --logo-blue: #9BC8CF;
+    --teal: #084C61;
+    --red: #DB504A;
+    --maroon: #4A051C;
+    --white: #f9f2f7;
+    --black: #050414;
+}
+
+/* Noto is licensed under the SIL Open Font License */
+/* A copy of the license can be found at fonts/OFL.txt */
+@font-face {
+    font-family: "Noto";
+    src: url("fonts/NotoSerif-VariableFont_wdth\,wght.ttf");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Noto";
+    src: url("fonts/NotoSerif-Italic-VariableFont_wdth\,wght.ttf");
+    font-weight: 400;
+    font-style: italic;
+}
+
+* {
+    font-family: "Noto";
+    color: var(--black);
+}
+

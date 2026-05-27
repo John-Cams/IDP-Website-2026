@@ -1,0 +1,71 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.topbar{
+    width: 100%;
+    background-color: var(--maroon);
+    height: 10vw;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.topbar img{
+    height: 9vw;
+    width: auto;
+}
+
+.topbarLabel{
+    color: var(--white);
+    font-size: 3vw;
+    display: flex;
+}
+
+@media screen and (width < 1000px){
+    .topbar{
+        height: 20vw;
+    }
+
+    .topbar img{
+        height: 18vw;
+    }
+
+    .topbarLabel{
+        display: none;
+    }
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.story{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30vw;
+}
+
+.story img{
+    width: 20vw;
+}
+
+.story h1, .story h2, .story p{
+    margin: 0;
+    width: 20vw;
+}
