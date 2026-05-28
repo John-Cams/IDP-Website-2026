@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../stylesheets/main.css">
     <link rel="stylesheet" href="../stylesheets/games.css">
     <script src="../js/wordsearch.js" defer></script>
+    <script src="../js/modal.js" defer></script>
 </head>
 <body>
     <header>
@@ -23,27 +24,336 @@
     </header>
 
 
-    <div class="modal">
-        <img src="../images/WStut.gif">
+    <div class="modal" id="helpModal">
+        <div class="close">
+            <button id="closeBtn"> X </button>
+        </div>
+        <div class="modalContent">
+            <h1>Wordsearch!</h1>
+            <img src="../images/WStut.gif">
+            <p>Find every word from the word bank in the puzzle below!</p>
+            <p>Once you have found a word tap the first letter then the last letter.</p>
+            <p>Words can be vertical, horizontal, and diagonal. Some are even backwards!</p>
+
+        </div>
+
     </div>
 
-    <div class="WSrow">
-        <div class="WScell" id="test">A</div>
-        <div class="WScell">A</div>
-        <div class="WScell">A</div>
+    <div class="wordContainer">
+        <div class="title">
+            <h1>Word bank</h1>
+            <button id="help">?</button>
+        </div>
+
+        <div class="words">
+            <ul>
+                <li id="word0">RUSSIA</li> 
+                <li id="word1">BIOME</li> 
+                <li id="word2">SPACE</li> 
+                <li id="word3">BIOTECH</li> 
+                <li id="word4">ENGINEERING</li> 
+            </ul>
+            <ul>
+                <li id="word5">COMPUTER SCIENCE</li> 
+                <li id="word6">ALGAE</li> 
+                <li id="word7">SENSOR</li> 
+                <li id="word8">ENZYME</li> 
+                <li id="word9">MARS</li> 
+            </ul>
+        </div>
     </div>
 
-    <div class="WSrow">
-        <div class="WScell">A</div>
-        <div class="WScell">A</div>
-        <div class="WScell">A</div>
+    <div class="wordsearch" id="WScontainer">
+        <div class="WSrow">
+            <button class="WScell" id="00">D</button>
+            <button class="WScell" id="01">B</button>
+            <button class="WScell" id="02">A</button>
+            <button class="WScell" id="03">P</button>
+            <button class="WScell" id="04">Y</button>
+            <button class="WScell" id="05">T</button>
+            <button class="WScell" id="06">O</button>
+            <button class="WScell" id="07">R</button>
+            <button class="WScell" id="08">X</button>
+            <button class="WScell" id="09">B</button>
+            <button class="WScell" id="0A">V</button>
+            <button class="WScell" id="0B">J</button>
+            <button class="WScell" id="0C">X</button>
+            <button class="WScell" id="0D">P</button>
+            <button class="WScell" id="0E">R</button>
+            <button class="WScell" id="0F">A</button>
+        </div>
+        <div class="WSrow">
+            <button class="WScell" id="10">R</button>
+            <button class="WScell" id="11">Z</button>
+            <button class="WScell" id="12">E</button>
+            <button class="WScell" id="13">R</button>
+            <button class="WScell" id="14">T</button>
+            <button class="WScell" id="15">Y</button>
+            <button class="WScell" id="16">P</button>
+            <button class="WScell" id="17">O</button>
+            <button class="WScell" id="18">I</button>
+            <button class="WScell" id="19">R</button>
+            <button class="WScell" id="1A">Q</button>
+            <button class="WScell" id="1B">R</button>
+            <button class="WScell" id="1C">F</button>
+            <button class="WScell" id="1D">Q</button>
+            <button class="WScell" id="1E">N</button>
+            <button class="WScell" id="1F">X</button>
+        </div>
+        <div class="WSrow">
+            <button class="WScell" id="20">C</button>
+            <button class="WScell" id="21">U</button>
+            <button class="WScell" id="22">A</button>
+            <button class="WScell" id="23">V</button>
+            <button class="WScell" id="24">F</button>
+            <button class="WScell" id="25">E</button>
+            <button class="WScell" id="26">H</button>
+            <button class="WScell" id="27">J</button>
+            <button class="WScell" id="28">K</button>
+            <button class="WScell" id="29">O</button>
+            <button class="WScell" id="2A">U</button>
+            <button class="WScell" id="2B">N</button>
+            <button class="WScell" id="2C">V</button>
+            <button class="WScell" id="2D">H</button>
+            <button class="WScell" id="2E">E</button>
+            <button class="WScell" id="2F">E</button>
+        </div>
+        <div class="WSrow">
+            <button class="WScell" id="30">O</button>
+            <button class="WScell" id="31">C</button>
+            <button class="WScell" id="32">O</button>
+            <button class="WScell" id="33">M</button>
+            <button class="WScell" id="34">P</button>
+            <button class="WScell" id="35">U</button>
+            <button class="WScell" id="36">T</button>
+            <button class="WScell" id="37">E</button>
+            <button class="WScell" id="38">R</button>
+            <button class="WScell" id="39">S</button>
+            <button class="WScell" id="3A">C</button>
+            <button class="WScell" id="3B">I</button>
+            <button class="WScell" id="3C">E</button>
+            <button class="WScell" id="3D">N</button>
+            <button class="WScell" id="3E">C</button>
+            <button class="WScell" id="3F">E</button>
+        </div>
+        <div class="WSrow">
+            <button class="WScell" id="40">M</button>
+            <button class="WScell" id="41">N</button>
+            <button class="WScell" id="42">P</button>
+            <button class="WScell" id="43">G</button>
+            <button class="WScell" id="44">W</button>
+            <button class="WScell" id="45">S</button>
+            <button class="WScell" id="46">E</button>
+            <button class="WScell" id="47">N</button>
+            <button class="WScell" id="48">S</button>
+            <button class="WScell" id="49">T</button>
+            <button class="WScell" id="4A">I</button>
+            <button class="WScell" id="4B">I</button>
+            <button class="WScell" id="4C">E</button>
+            <button class="WScell" id="4D">A</button>
+            <button class="WScell" id="4E">I</button>
+            <button class="WScell" id="4F">C</button>
+        </div>
+        <div class="WSrow">
+            <button class="WScell" id="50">B</button>
+            <button class="WScell" id="51">A</button>
+            <button class="WScell" id="52">H</button>
+            <button class="WScell" id="53">R</button>
+            <button class="WScell" id="54">N</button>
+            <button class="WScell" id="55">P</button>
+            <button class="WScell" id="56">I</button>
+            <button class="WScell" id="57">I</button>
+            <button class="WScell" id="58">R</button>
+            <button class="WScell" id="59">T</button>
+            <button class="WScell" id="5A">N</button>
+            <button class="WScell" id="5B">A</button>
+            <button class="WScell" id="5C">N</button>
+            <button class="WScell" id="5D">R</button>
+            <button class="WScell" id="5E">A</button>
+            <button class="WScell" id="5F">E</button>
+        </div>
+        <div class="WSrow">
+            <button class="WScell" id="60">D</button>
+            <button class="WScell" id="61">Q</button>
+            <button class="WScell" id="62">R</button>
+            <button class="WScell" id="63">E</button>
+            <button class="WScell" id="64">C</button>
+            <button class="WScell" id="65">A</button>
+            <button class="WScell" id="66">A</button>
+            <button class="WScell" id="67">A</button>
+            <button class="WScell" id="68">L</button>
+            <button class="WScell" id="69">G</button>
+            <button class="WScell" id="6A">A</button>
+            <button class="WScell" id="6B">E</button>
+            <button class="WScell" id="6C">Z</button>
+            <button class="WScell" id="6D">S</button>
+            <button class="WScell" id="6E">C</button>
+            <button class="WScell" id="6F">N</button>
+        </div>
+        <div class="WSrow">
+            <button class="WScell" id="70">T</button>
+            <button class="WScell" id="71">H</button>
+            <button class="WScell" id="72">L</button>
+            <button class="WScell" id="73">S</button>
+            <button class="WScell" id="74">F</button>
+            <button class="WScell" id="75">C</button>
+            <button class="WScell" id="76">A</button>
+            <button class="WScell" id="77">S</button>
+            <button class="WScell" id="78">D</button>
+            <button class="WScell" id="79">L</button>
+            <button class="WScell" id="7A">K</button>
+            <button class="WScell" id="7B">N</button>
+            <button class="WScell" id="7C">Y</button>
+            <button class="WScell" id="7D">D</button>
+            <button class="WScell" id="7E">U</button>
+            <button class="WScell" id="7F">G</button>
+        </div>
+        <div class="WSrow">
+            <button class="WScell" id="80">V</button>
+            <button class="WScell" id="81">C</button>
+            <button class="WScell" id="82">N</button>
+            <button class="WScell" id="83">M</button>
+            <button class="WScell" id="84">V</button>
+            <button class="WScell" id="85">E</button>
+            <button class="WScell" id="86">R</button>
+            <button class="WScell" id="87">Y</button>
+            <button class="WScell" id="88">J</button>
+            <button class="WScell" id="89">K</button>
+            <button class="WScell" id="8A">L</button>
+            <button class="WScell" id="8B">N</button>
+            <button class="WScell" id="8C">M</button>
+            <button class="WScell" id="8D">S</button>
+            <button class="WScell" id="8E">I</button>
+            <button class="WScell" id="8F">I</button>
+        </div>
+        <div class="WSrow">
+            <button class="WScell" id="90">R</button>
+            <button class="WScell" id="91">E</button>
+            <button class="WScell" id="92">P</button>
+            <button class="WScell" id="93">E</button>
+            <button class="WScell" id="94">D</button>
+            <button class="WScell" id="95">S</button>
+            <button class="WScell" id="96">O</button>
+            <button class="WScell" id="97">Q</button>
+            <button class="WScell" id="98">J</button>
+            <button class="WScell" id="99">A</button>
+            <button class="WScell" id="9A">X</button>
+            <button class="WScell" id="9B">W</button>
+            <button class="WScell" id="9C">E</button>
+            <button class="WScell" id="9D">A</button>
+            <button class="WScell" id="9E">S</button>
+            <button class="WScell" id="9F">N</button>
+        </div>
+        <div class="WSrow">
+            <button class="WScell" id="A0">R</button>
+            <button class="WScell" id="A1">T</button>
+            <button class="WScell" id="A2">A</button>
+            <button class="WScell" id="A3">Z</button>
+            <button class="WScell" id="A4">T</button>
+            <button class="WScell" id="A5">I</button>
+            <button class="WScell" id="A6">S</button>
+            <button class="WScell" id="A7">R</button>
+            <button class="WScell" id="A8">O</button>
+            <button class="WScell" id="A9">S</button>
+            <button class="WScell" id="AA">N</button>
+            <button class="WScell" id="AB">E</button>
+            <button class="WScell" id="AC">S</button>
+            <button class="WScell" id="AD">S</button>
+            <button class="WScell" id="AE">X</button>
+            <button class="WScell" id="AF">E</button>
+        </div>
+        <div class="WSrow">
+            <button class="WScell" id="B0">E</button>
+            <button class="WScell" id="B1">O</button>
+            <button class="WScell" id="B2">A</button>
+            <button class="WScell" id="B3">S</button>
+            <button class="WScell" id="B4">D</button>
+            <button class="WScell" id="B5">F</button>
+            <button class="WScell" id="B6">G</button>
+            <button class="WScell" id="B7">H</button>
+            <button class="WScell" id="B8">H</button>
+            <button class="WScell" id="B9">J</button>
+            <button class="WScell" id="BA">D</button>
+            <button class="WScell" id="BB">L</button>
+            <button class="WScell" id="BC">L</button>
+            <button class="WScell" id="BD">S</button>
+            <button class="WScell" id="BE">C</button>
+            <button class="WScell" id="BF">E</button>
+        </div>
+        <div class="WSrow">
+            <button class="WScell" id="C0">B</button>
+            <button class="WScell" id="C1">I</button>
+            <button class="WScell" id="C2">O</button>
+            <button class="WScell" id="C3">M</button>
+            <button class="WScell" id="C4">E</button>
+            <button class="WScell" id="C5">E</button>
+            <button class="WScell" id="C6">R</button>
+            <button class="WScell" id="C7">T</button>
+            <button class="WScell" id="C8">Y</button>
+            <button class="WScell" id="C9">D</button>
+            <button class="WScell" id="CA">I</button>
+            <button class="WScell" id="CB">N</button>
+            <button class="WScell" id="CC">P</button>
+            <button class="WScell" id="CD">U</button>
+            <button class="WScell" id="CE">R</button>
+            <button class="WScell" id="CF">R</button>
+        </div>
+        <div class="WSrow">
+            <button class="WScell" id="D0">X</button>
+            <button class="WScell" id="D1">B</button>
+            <button class="WScell" id="D2">T</button>
+            <button class="WScell" id="D3">H</button>
+            <button class="WScell" id="D4">L</button>
+            <button class="WScell" id="D5">X</button>
+            <button class="WScell" id="D6">T</button>
+            <button class="WScell" id="D7">A</button>
+            <button class="WScell" id="D8">N</button>
+            <button class="WScell" id="D9">V</button>
+            <button class="WScell" id="DA">H</button>
+            <button class="WScell" id="DB">M</button>
+            <button class="WScell" id="DC">A</button>
+            <button class="WScell" id="DD">F</button>
+            <button class="WScell" id="DE">H</button>
+            <button class="WScell" id="DF">I</button>
+        </div>
+        <div class="WSrow">
+            <button class="WScell" id="E0">R</button>
+            <button class="WScell" id="E1">L</button>
+            <button class="WScell" id="E2">O</button>
+            <button class="WScell" id="E3">X</button>
+            <button class="WScell" id="E4">J</button>
+            <button class="WScell" id="E5">E</button>
+            <button class="WScell" id="E6">L</button>
+            <button class="WScell" id="E7">N</button>
+            <button class="WScell" id="E8">S</button>
+            <button class="WScell" id="E9">I</button>
+            <button class="WScell" id="EA">Y</button>
+            <button class="WScell" id="EB">O</button>
+            <button class="WScell" id="EC">Q</button>
+            <button class="WScell" id="ED">O</button>
+            <button class="WScell" id="EE">X</button>
+            <button class="WScell" id="EF">N</button>
+        </div>
+        <div class="WSrow">
+            <button class="WScell" id="F0">Y</button>
+            <button class="WScell" id="F1">O</button>
+            <button class="WScell" id="F2">D</button>
+            <button class="WScell" id="F3">J</button>
+            <button class="WScell" id="F4">H</button>
+            <button class="WScell" id="F5">C</button>
+            <button class="WScell" id="F6">V</button>
+            <button class="WScell" id="F7">D</button>
+            <button class="WScell" id="F8">H</button>
+            <button class="WScell" id="F9">U</button>
+            <button class="WScell" id="FA">W</button>
+            <button class="WScell" id="FB">K</button>
+            <button class="WScell" id="FC">T</button>
+            <button class="WScell" id="FD">C</button>
+            <button class="WScell" id="FE">B</button>
+            <button class="WScell" id="FF">G</button>
+        </div>
     </div>
 
-    <div class="WSrow">
-        <div class="WScell">A</div>
-        <div class="WScell">A</div>
-        <div class="WScell">A</div>
-    </div>
 
 
 

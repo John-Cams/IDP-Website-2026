@@ -67,6 +67,31 @@
     }
 }
 
+.wordContainer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.words{
+    display: flex;
+    flex-direction: row;
+}
+
+.words *{
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.wordsearch{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+}
+
 .WSrow{
     display: flex;
     flex-direction: row;
@@ -75,11 +100,82 @@
 .WScell{
     display: flex;
     text-align: center;
-    font-size: 5vw;
+    font-size: 2.5vw;
+    width: 64px;
+    height: 64px;
+    font-family: "Gasoek";
+    padding: 0;
+    align-items: center;
+    justify-content: center;
 
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
 
+.title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.title button{
+    width: 2vw;
+    height: 2vw;
+    background-color: var(--black);
+    color: var(--white);
+    font-family: "Gasoek";
+    border: none;
+    outline: none;
+    box-shadow: none;
+    margin-left: 1vw;
+}
+
+@media screen and (width < 1000px){
+
+    .WScell{
+        width: 6.25vw;
+        height: 6.25vw;
+        font-size: 5vw;
+    }
+
+    .title button{
+        width: 5vh;
+        height: 5vh;
+    }
+
+}
+
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    background-color: var(--white);
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.modal .close{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.modal .close button{
+    background-color: var(--red);
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.modalContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.modalContent *{
+    margin: 1px;
 }
