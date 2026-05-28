@@ -46,7 +46,40 @@
 }
 
 @media screen and (width < 1000px){
+    .gameThumb{
+        width: 90vw;
+        height: 90vw;
+    }
+
+    .gameThumb img{
+        width: 30vw;
+        height: 30vw;
+    }
+
+    .gameThumb button{
+        width: 50vw;
+        height: 20vw;
+        border-radius: 10vw;
+    }
+
     .gameThumbDiv{
         flex-direction: column;
     }
+}
+
+.WSrow{
+    display: flex;
+    flex-direction: row;
+}
+
+.WScell{
+    display: flex;
+    text-align: center;
+    font-size: 5vw;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
 }
