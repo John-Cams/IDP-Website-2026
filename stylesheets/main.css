@@ -26,6 +26,19 @@ body{
     display: flex;
 }
 
+.barButtons{
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--maroon);
+}
+
+.barButtons a{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: x-large;
+    color: var(--logo-blue);
+}
+
 @media screen and (width < 1000px){
     .topbar{
         height: 20vw;
@@ -38,6 +51,25 @@ body{
     .topbarLabel{
         display: none;
     }
+}
+
+.quote{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+}
+
+.quote h1{
+    margin: 5px;
+    margin-bottom: 0;
+}
+.quote p{
+    margin-top: 0;
+    color: var(--teal)
 }
 
 .row{
@@ -63,9 +95,46 @@ body{
 
 .story img{
     width: 20vw;
+    border-radius: 1vw;
 }
 
 .story h1, .story h2, .story p{
+    text-align: center;
     margin: 0;
     width: 20vw;
+}
+
+.storyRow{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.storyRowSep{
+    height: 5vw;
+}
+
+@media screen and (width < 1000px){
+    .story{
+        width: 80vw;
+        margin: 10vw;
+    }
+
+    .story h1, .story h2, .story p, .story img{
+        width: 80vw;
+    }
+
+    .story img{
+        border-radius: 5vw;
+    }
+
+    .storyRow{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .storyRowSep{
+        height: 0;
+    }
 }

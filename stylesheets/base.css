@@ -24,6 +24,15 @@
     font-style: italic;
 }
 
+/* Noto is licensed under the SIL Open Font License */
+/* A copy of the license can be found at fonts/OFL.txt */
+@font-face {
+    font-family: "Gasoek";
+    src: url("fonts/GasoekOne-Regular.ttf");
+    font-weight: 400;
+    font-style: normal;
+}
+
 * {
     font-family: "Noto";
     color: var(--black);

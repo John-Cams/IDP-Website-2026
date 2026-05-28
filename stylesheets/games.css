@@ -1,0 +1,52 @@
+.gameThumb{
+    width: 30vw;
+    height: 30vw;
+    border-radius: 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 5vw;
+}
+
+#WS{
+    background-color: var(--logo-blue);
+}
+
+#CW{
+    background-color: var(--logo-orange);
+}
+
+.gameThumb img{
+    width: 10vw;
+    height: 10vw;
+}
+
+.gameThumb button{
+    width: 20vw;
+    height: 5vw;
+    font-size: 30pt;
+    font-family: "Gasoek";
+    color: var(--white);
+    background-color: var(--black);
+    border-radius: 2.5vw;
+}
+
+.gameThumb button:hover, .gameThumb button:active{
+    color: var(--black);
+    background-color: var(--white); 
+}
+
+.gameThumbDiv{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (width < 1000px){
+    .gameThumbDiv{
+        flex-direction: column;
+    }
+}
