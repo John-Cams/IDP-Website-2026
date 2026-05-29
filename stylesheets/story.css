@@ -1,0 +1,24 @@
+.thumbnail{
+    height: 20vw;
+    width: 100%;
+    object-fit: cover;
+}
+
+.quoteCon{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.quote{
+    background-color: #814E1C;
+    outline: #FCC590;
+    border-radius: 2vw;
+    width: 90vw;
+}
+
+.quote *{
+    color: #FCC590 !important;
+    padding: 2vw;
+}
