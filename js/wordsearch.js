@@ -36,6 +36,8 @@ container.addEventListener('click', function(event) {
 
                         document.getElementById("word" + ind).style.textDecoration = "line-through";
                     }
+                } else {
+                  document.getElementById(cellId).style.backgroundColor = "#E5E5E5"
                 }
             } else {
                 document.getElementById(cellId).style.backgroundColor = "#E5E5E5";
